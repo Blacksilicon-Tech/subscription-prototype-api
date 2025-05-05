@@ -21,7 +21,7 @@ ENV DB_PORT=3306
 ENV DB_USERNAME=root
 ENV DB_PASSWORD=P@ssw0rd
 ENV DB_DATABASE=subspropdb
-ENV FRONTEND_URL=http://localhost:5177
+ENV FRONTEND_URL=https://master.dvmc0nqz247x8.amplifyapp.com
 ENV PORT=3010
 
 # Build the application
