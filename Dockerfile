@@ -13,17 +13,6 @@ RUN npm install
 # Copy all source files
 COPY . .
 
-# Set environment variables
-ENV JWT_SECRET=dfdffgghttybnbnnbyuuy7676768hjhgbvdfcdffdgnmmn78878b
-ENV API_SECRET=hghghg7778hhbhgghnmnm7765656fggvbvb767678fgfggfvh
-ENV DB_HOST=localhost
-ENV DB_PORT=3306
-ENV DB_USERNAME=root
-ENV DB_PASSWORD=P@ssw0rd
-ENV DB_DATABASE=subspropdb
-ENV FRONTEND_URL=https://master.dvmc0nqz247x8.amplifyapp.com
-ENV PORT=3010
-
 # Build the application
 RUN npm run build
 
