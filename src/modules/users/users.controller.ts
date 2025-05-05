@@ -82,11 +82,11 @@ export class UsersController {
     @Body('webhookUrl') webhookUrl: string,
     @GetUser() user: User,
   ) {
-    if (user.id !== id) {
+    if (!user || !id) {
       throw new Error('Unauthorized');
     }
     const updatedUser = await this.usersService.updateWebhookUrl(
-      id,
+      user.email,
       webhookUrl,
     );
     return {

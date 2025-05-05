@@ -27,8 +27,10 @@ export class UsersService {
     return this.usersRepository.findOne({ where: { id } });
   }
 
-  async updateWebhookUrl(id: string, webhookUrl: string): Promise<User> {
-    const user = await this.findById(id);
+  async updateWebhookUrl(email: string, webhookUrl: string): Promise<User> {
+    const user = await this.usersRepository.findOne({
+      where: { email: email },
+    });
     if (!user) {
       throw new Error('User not found');
     }
