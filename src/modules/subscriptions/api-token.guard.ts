@@ -34,18 +34,15 @@ export class ApiTokenGuard implements CanActivate {
       ) as any;
 
       // Find user by ID from the token
-      const user = await this.userService.findById(decoded.id);
+      const user = await this.userService.findById(decoded.email);
 
-      // Verify the token matches the one stored in the database
       if (!user || user.apiToken !== token) {
         throw new UnauthorizedException('Invalid API token');
       }
 
-      // Attach user to request
       request.user = user;
       return true;
     } catch (err) {
-      console.log(err);
       throw new UnauthorizedException('Invalid or expired API token');
     }
   }

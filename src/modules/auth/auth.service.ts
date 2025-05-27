@@ -46,7 +46,6 @@ export class AuthService {
   }
 
   async getUserProfile(userId: string): Promise<SafeUser> {
-    console.log(userId);
     const user = await this.usersService.findByEmail(userId);
     if (!user) {
       throw new UnauthorizedException('User not found');
