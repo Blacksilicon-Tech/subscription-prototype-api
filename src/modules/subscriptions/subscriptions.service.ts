@@ -44,7 +44,7 @@ export class SubscriptionsService {
         if (user.webhookUrl) {
           const webhookPayload = {
             msisdn: createSubscriptionDto.msisdn,
-            network: `createSubscriptionDto.provider`,
+            network: createSubscriptionDto.provider,
             message: 'Success',
             productCode: createSubscriptionDto.productCode,
             transactionId: transactionId,
