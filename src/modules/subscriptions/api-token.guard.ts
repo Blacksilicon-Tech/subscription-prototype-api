@@ -45,6 +45,7 @@ export class ApiTokenGuard implements CanActivate {
       request.user = user;
       return true;
     } catch (err) {
+      console.log(err);
       throw new UnauthorizedException('Invalid or expired API token');
     }
   }
